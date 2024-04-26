@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ATOM: Attention Mixer for Efficient Dataset Distillation">
+  <meta name="keywords" content="Dataset Distillation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATOM: Attention Mixer for Efficient Dataset Distillation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+  
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://datadistillation.github.io/DataDAM/">
+            DataDAM
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ATOM: Attention Mixer for Efficient Dataset Distillation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://skhaki18.github.io"><b>Samir Khaki</b></a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://ahmadsajedii.github.io/"><b>Ahmad Sajedi</b></a><sup>1*</sup>,</span>
+            <span class="author-block">
+              <a href="">Kai Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="">Lucy Z. Liu</a><sup>3</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.labs.chem-eng.utoronto.ca/lawryshyn/">Yuri A. Lawryshyn</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.comm.utoronto.ca/~kostas/">Konstantinos N. Plataniotis</a><sup>1</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Toronto,</span>
+            <span class="author-block"><sup>2</sup>National University of Singapore,</span>
+            <span class="author-block"><sup>3</sup>Royal Bank of Canada (RBC),</span>
+            <br>CVPR-DD 2024 (Oral)</span>
+            <br>
+            <span class="author-block"><sup>*</sup><i>Equal Contribution</i></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper (Coming Soon)</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video (Coming Soon)</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-image"></i>
+                  </span>
+                  <span>Poster (Coming Soon)</span>
+                  </a>
+              </span>
+
+
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-file-powerpoint"></i>
+                  </span>
+                  <span>Presentation (Coming Soon)</span>
+                  </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/DataDistillation/ATOM"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- Fill in Image Link -->
+      <figure style="margin-right: 2px;">
+        <img src="static/img/CIFAR10SmallGrid.jpg" alt="Image 1" style="max-width: 95%;">
+        <figcaption style="text-align: center;">CIFAR10</figcaption>
+      </figure>
+      <figure style="margin-right: 2px;">
+        <img src="static/img/CIFAR100SmallGrid.jpg" alt="Image 1" style="max-width: 95%;">
+        <figcaption style="text-align: center;">CIFAR100</figcaption>
+      </figure>
+      <figure style="margin-right: 15px;">
+        <img src="static/img/TinyImageNetGridSmall.jpg" alt="Image 1" style="max-width: 101.25%;">
+        <figcaption style="text-align: center;">Tiny ImageNet</figcaption>
+      </figure>
+      <figure>
+        <img src="static/img/ImageNetGridFinal.jpg" alt="Image 1" style="max-width: 101.25%;">
+        <figcaption style="text-align: center;">ImageNet-1K</figcaption>
+      </figure>
+
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <h2 class="subtitle has-text-centered">
+        <!-- Add Caption -->
+       <i> </i> 
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent works in dataset distillation seek to minimize training expenses by generating a condensed synthetic dataset that encapsulates the information present in a larger real dataset. These approaches ultimately aim to attain test accuracy levels akin to those achieved by models trained on the entirety of the original dataset. Previous studies in feature and distribution matching have achieved significant results without incurring the costs of bi-level optimization in the distillation process. Despite their convincing efficiency, many of these methods suffer from marginal downstream performance improvements, limited distillation of contextual information, and subpar cross-architecture generalization. To address these challenges in dataset distillation, we propose the Attention Mixer (ATOM) module to efficiently distill large datasets using a mixture of channel and spatial-wise attention in the feature matching process. Spatial-wise attention helps guide the learning process based on consistent localization of classes in their respective images, allowing for distillation from a broader receptive field. Meanwhile, channel-wise attention captures the contextual information associated with the class itself, thus making the synthetic image more informative for training. By integrating both types of attention, our ATOM module demonstrates superior performance across various computer vision datasets, including CIFAR10/100 and TinyImagenet. Notably, our method significantly improves performance in scenarios with a low number of images per class, thereby enhancing its potential. Furthermore, we maintain our improvement on cross-architectures and downstream applications such as neural architecture search.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+<!-- Method -->
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>Dataset Distillation with Attention Matching (DataDAM) is meticulously designed to efficiently capture the most crucial and distinctive
+          information from real datasets. This method consists of two essential components: Spatial Attention Matching (SAM) and Last-Layer Feature
+          Alignment. SAM aligns attention maps, while the Last-Layer Feature Alignment synchronizes embedded representations from different layers
+          in randomly initialized neural networks. DataDAM is a streamlined and effective approach to distilling essential dataset insights.</p>
+          <figure>
+            <img src="static/img/DataDAM_pipeline.png" style="max-width: 100%;>
+            <figcaption style="text-align: center;"></figcaption>
+          </figure> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Method --> 
+
+    
+ <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Visulization</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <!-- <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video> -->
+          <figure>
+            <img src="static/img/ImageNetteFullGrid_ipc10.jpg" alt="Image 1" style="max-width: 101.25%;">
+            <figcaption style="text-align: center;">ImageNette (128x128)</figcaption>
+          </figure>
+        </div>
+        <div class="item item-chair-tp">
+          <figure>
+            <img src="static/img/ImageSquackFullGrid_ipc10.jpg" alt="Image 1" style="max-width: 101.25%;">
+            <figcaption style="text-align: center;">ImageSquack (128x128)</figcaption>
+          </figure>
+        </div>
+        <div class="item item-shiba">
+          <figure>
+            <img src="static/img/ImageWoofFullGrid_ipc10.jpg" alt="Image 1" style="max-width: 101.25%;">
+            <figcaption style="text-align: center;">ImageWoof (128x128)</figcaption>
+          </figure>
+        </div>
+        <div class="item item-fullbody">
+          <figure>
+            <img src="static/img/VGG_16_Grid.jpg" alt="Image 1" style="max-width: 126.25%;">
+            <figcaption style="text-align: center;">CIFAR10 VGG16 IPC 50</figcaption>
+          </figure>
+        </div>
+        <div class="item item-blueshirt">
+          <figure>
+            <img src="static/img/AlexNetGrid.jpg" alt="Image 1" style="max-width: 126.25%;">
+            <figcaption style="text-align: center;">CIFAR10 AlexNet IPC 50</figcaption>
+          </figure>
+        </div>
+        <div class="item item-mask">
+          <figure>
+            <img src="static/img/FullNoiseGrid.jpg" alt="Image 1" style="max-width: 126.25%">
+            <figcaption style="text-align: center;">CIFAR10 Gaussian Noise Initialization</figcaption>
+          </figure>
+        </div>
+        <!-- <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</section>   
+    
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="./static/img/DataDAM-ICCV23-Video.mp4"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+  <!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>Coming Soon !
+  </code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2310.00093">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/DataDistillation/DataDAM" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
