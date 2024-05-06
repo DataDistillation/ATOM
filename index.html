@@ -228,7 +228,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent works in dataset distillation seek to minimize training expenses by generating a condensed synthetic dataset that encapsulates the information present in a larger real dataset. These approaches ultimately aim to attain test accuracy levels akin to those achieved by models trained on the entirety of the original dataset. Previous studies in feature and distribution matching have achieved significant results without incurring the costs of bi-level optimization in the distillation process. Despite their convincing efficiency, many of these methods suffer from marginal downstream performance improvements, limited distillation of contextual information, and subpar cross-architecture generalization. To address these challenges in dataset distillation, we propose the Attention Mixer (ATOM) module to efficiently distill large datasets using a mixture of channel and spatial-wise attention in the feature matching process. Spatial-wise attention helps guide the learning process based on consistent localization of classes in their respective images, allowing for distillation from a broader receptive field. Meanwhile, channel-wise attention captures the contextual information associated with the class itself, thus making the synthetic image more informative for training. By integrating both types of attention, our ATOM module demonstrates superior performance across various computer vision datasets, including CIFAR10/100 and TinyImagenet. Notably, our method significantly improves performance in scenarios with a low number of images per class, thereby enhancing its potential. Furthermore, we maintain our improvement on cross-architectures and downstream applications such as neural architecture search.
+            Recent works in dataset distillation seek to minimize training expenses by generating a condensed synthetic dataset
+            that encapsulates the information present in a larger real dataset. These approaches ultimately aim to attain test accuracy
+            levels akin to those achieved by models trained on the entirety of the original dataset. Previous studies in feature and
+            distribution matching have achieved significant results without incurring the costs of bi-level optimization in the
+            distillation process. Despite their convincing efficiency, many of these methods suffer from marginal downstream performance
+            improvements, limited distillation of contextual information, and subpar cross-architecture generalization. To address these
+            challenges in dataset distillation, we propose the Attention Mixer (ATOM) module to efficiently distill large datasets using
+            a mixture of channel and spatial-wise attention in the feature matching process. Spatial-wise attention helps guide the
+            learning process based on consistent localization of classes in their respective images, allowing for distillation from
+            a broader receptive field. Meanwhile, channel-wise attention captures the contextual information associated with the class
+            itself, thus making the synthetic image more informative for training. By integrating both types of attention, our ATOM
+            module demonstrates superior performance across various computer vision datasets, including CIFAR10/100 and TinyImagenet.
+            Notably, our method significantly improves performance in scenarios with a low number of images per class, thereby enhancing
+            its potential. Furthermore, we maintain our improvement on cross-architectures and downstream applications such as neural
+            architecture search.
             </p>
           </div>
       </div>
